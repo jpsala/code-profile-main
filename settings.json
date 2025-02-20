@@ -1,0 +1,38 @@
+{
+    "settingsSync.ignoredExtensions": [
+        "dyno-nguyen.vscode-dynofileutils"
+    ],
+    "window.newWindowDimensions": "maximized",
+    "security.workspace.trust.untrustedFiles": "open",
+    "window.newWindowProfile": "Main",
+    "commands.commands": {
+        "JP.toggleSidebarVisibility": {
+            "command": "workbench.action.toggleSidebarVisibility",
+            "icon": "activity-bar-left",
+            "statusBar": {
+                "backgroundColor": "warning"
+            }
+        },
+        "JP.keybindings": {
+            "command": "workbench.action.openGlobalKeybindings",
+            "icon": "keyboard",
+            "statusBar": {
+                "backgroundColor": "warning",
+            }
+        },
+        "JP.reloadWindow": {
+            "command": "workbench.action.reloadWindow",
+            "icon": "refresh",
+            "statusBar": {
+                "backgroundColor": "warning",
+            }
+        },
+        "JP.deleteFile": {
+            "command": "multiCommand.deleteFileNoConfirmation",
+            "icon": "trash",
+            "statusBar": {
+                "backgroundColor": "error",
+            }
+        },
+    },
+}
