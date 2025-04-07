@@ -4,35 +4,79 @@
     ],
     "window.newWindowDimensions": "maximized",
     "security.workspace.trust.untrustedFiles": "open",
-    "window.newWindowProfile": "Main",
     "commands.commands": {
         "JP.toggleSidebarVisibility": {
             "command": "workbench.action.toggleSidebarVisibility",
             "icon": "activity-bar-left",
             "statusBar": {
-                "backgroundColor": "warning"
+                // "backgroundColor": "warning"
             }
         },
         "JP.keybindings": {
             "command": "workbench.action.openGlobalKeybindings",
             "icon": "keyboard",
             "statusBar": {
-                "backgroundColor": "warning",
+                // "backgroundColor": "warning"
             }
         },
         "JP.reloadWindow": {
             "command": "workbench.action.reloadWindow",
             "icon": "refresh",
             "statusBar": {
-                "backgroundColor": "warning",
+                // "backgroundColor": "warning"
             }
         },
-        "JP.deleteFile": {
-            "command": "multiCommand.deleteFileNoConfirmation",
+        "JP.deleteFileNoConfirmation": 
+        {
+			"sequence": [
+				{
+					"command": "commands.toggleSetting",
+					"args": {
+						"setting": "dynoFileUtils.confirmDelete",
+						"value": [false],
+					},
+				},
+				{
+					"command": "dynoFileUtils.deleteFile",
+					"args": [
+						{
+							"confirm": false
+						}
+					]
+				},
+				{
+					"command": "commands.toggleSetting",
+					"args": {
+						"setting": "dynoFileUtils.confirmDelete",
+						"value": [true],
+					},
+				},
+
+			],
+			"args": {
+				"setting": "dynoFileUtils.confirmDelete",
+				"value": false,
+			},
             "icon": "trash",
             "statusBar": {
-                "backgroundColor": "error",
+                "color": "red",
             }
+		},
+        "JP.commands.tree.focus": {
+            "command": "commands.tree.focus",
+            "icon": "testing-run-all-icon",
+            "statusBar": {}
         },
+        "JP.confirmDeleteOff": {
+            "command": "settings.cycle.excludeGitIgnore",
+            "icon": "settings-editor-label-icon",
+            "statusBar": {"tooltip": "Exclude .gitignore toggle"}
+        }
+    },
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": true
     },
 }
